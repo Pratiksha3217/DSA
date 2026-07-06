@@ -1,14 +1,12 @@
 class Solution(object):
     def containsDuplicate(self, nums):
         """
-        :type nums: List[int]
+        :type nums: List[int]+-/8+74\5
         :rtype: bool
         """
-        seen = set()
-        for i in range(0,len(nums)):
-            if nums[i] in seen:
+        seen = {}
+        for num in nums:
+            if num in seen and seen[num] >= 1:
                 return True
-            seen.add(nums[i])
+            seen[num] = seen.get(num,0) + 1
         return False
-        
-        
