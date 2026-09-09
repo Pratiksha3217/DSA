@@ -1,12 +1,14 @@
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        s = re.sub(r'[^A-Za-z0-9]',"",s)
-        s=s.lower()
-        s_reverse = s[::-1]
-        s_reverse = s_reverse.lower()
-        if s == s_reverse:
+        s = s.lower()
+        s1 = ""
+        for i in s:
+            if i.isalnum():
+                s1 += i
+
+        s_rev = s1[::-1]
+        if s1 == s_rev:
             return True
         else:
             return False
-
         
